@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	width: 100vw;
+	min-height: 100vh;
+	height: auto;
+	background-color: #283441;
+	background-blend-mode: multiply;
+	background-image: url("../images/banner.jpeg"),
+		linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-family: "Poppins", sans-serif !important;
+	position: relative;
+}
+
+.new-bg-body {
+	background-blend-mode: multiply;
+	background-image: url("../images/banner.jpeg"),
+		linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.item-icon-edit:hover {
+	color: #b6b6b6;
+	cursor: pointer;
+}
+
+.item-icon-delete:hover {
+	color: rgb(224, 5, 5);
+	cursor: pointer;
+}
+
+.text-white {
+	color: #fff;
+}
+
+.navbar-menu .nav-user-name,
+.title-project {
+	color: #fff;
+}
+
+#item-img-profile {
+	border-radius: 50%;
+}
+
+/*temp*/
+.spinner-fixed {
+	display: none;
+	position: fixed;
+	left: 47%;
+	top: 45%;
+	width: 4rem !important;
+	height: 4rem !important;
+}
+
+.title-banner-home {
+	width: 70%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 6rem;
+	text-align: center;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: "Permanent Marker", cursive;
+	z-index: -100;
+}
+
+.title-columns {
+	width: 100%;
+	height: 3rem;
+	text-align: left;
+}
+
+@media (max-width: 900px) {
+	.title-banner-home {
+		width: 95%;
+		font-size: 5rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.title-banner-home {
+		width: 95%;
+		font-size: 3rem;
+	}
+}
