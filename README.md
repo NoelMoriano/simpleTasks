@@ -10,7 +10,7 @@ Registro simple de tu lista de tareas, con multiple autenticación (Email, Googl
 - Boostrap 5
 - Firebase (Authentication, Firestore, hosting)
 
-## Prewview project 🚀
+## Preview project 🚀
 
 ---
 
