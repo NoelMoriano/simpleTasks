@@ -1,8 +1,8 @@
 const signUpForm = document.querySelector("#signup-form");
 const signInForm = document.querySelector("#signin-form");
 
-const signInWithGoogle = document.querySelector("#btn-signin-google");
-const signInWithFacebook = document.querySelector("#btn-signin-fb");
+const signInWithGoogle = document.querySelectorAll("#btn-signin-google");
+const signInWithFacebook = document.querySelectorAll("#btn-signin-fb");
 
 // SIGNUP EMAIL AND PASSWORD
 signUpForm.addEventListener("submit", (e) => {
@@ -46,61 +46,71 @@ signInForm.addEventListener("submit", async (e) => {
 	} catch (e) {
 		console.log("signin Email&Pass:", user);
 	} finally {
-		spinButton({identifier: "#btn-signin-emailpass", action: "default", text: "Sign In"});
+		spinButton({
+			identifier: "#btn-signin-emailpass",
+			action: "default",
+			text: "Iniciar sesión",
+		});
 	}
 });
 
 // SIGN IN WITH GOOGLE
-signInWithGoogle.addEventListener("click", (e) => {
-	e.preventDefault();
-	spinButton({identifier: "#btn-signin-google", action: "singin"});
-	const provider = new firebase.auth.GoogleAuthProvider();
-	auth
-		.signInWithPopup(provider)
-		.then((user) => {
-			console.log("SignInWithGoogle success: ", user);
-			spinButton({
-				identifier: "#btn-signin-google",
-				action: "default",
-				text: "Signin with google",
+signInWithGoogle.forEach((button) => {
+	button.addEventListener("click", (e) => {
+		e.preventDefault();
+		spinButton({identifier: "#btn-signin-google", action: "singin"});
+		const provider = new firebase.auth.GoogleAuthProvider();
+		auth
+			.signInWithPopup(provider)
+			.then((user) => {
+				console.log("SignInWithGoogle success: ", user);
+				spinButton({
+					identifier: "#btn-signin-google",
+					action: "default",
+					text: "Signin with google",
+				});
+				hideModal("#signInModal");
+				hideModal("#signUpModal");
+			})
+			.catch((error) => {
+				spinButton({
+					identifier: "#btn-signin-google",
+					action: "default",
+					text: "Google",
+				});
+				console.error("signInWithGoogle->", error);
 			});
-			hideModal("#signInModal");
-		})
-		.catch((error) => {
-			spinButton({
-				identifier: "#btn-signin-google",
-				action: "default",
-				text: "Signin with google",
-			});
-			console.error("signInWithGoogle->", error);
-		});
+	});
 });
 
 //  SIGNIN WITH FACEBOOK
-signInWithFacebook.addEventListener("click", (e) => {
-	e.preventDefault();
-	spinButton({identifier: "#btn-signin-fb", action: "singin"});
-	const provider = new firebase.auth.FacebookAuthProvider();
+signInWithFacebook.forEach((button) => {
+	button.addEventListener("click", (e) => {
+		e.preventDefault();
+		spinButton({identifier: "#btn-signin-fb", action: "singin"});
+		const provider = new firebase.auth.FacebookAuthProvider();
 
-	auth
-		.signInWithPopup(provider)
-		.then((user) => {
-			console.log("signInWithFacebook: ", user);
-			spinButton({
-				identifier: "#btn-signin-fb",
-				action: "default",
-				text: "Signin with facebook",
+		auth
+			.signInWithPopup(provider)
+			.then((user) => {
+				console.log("signInWithFacebook: ", user);
+				spinButton({
+					identifier: "#btn-signin-fb",
+					action: "default",
+					text: "Signin with facebook",
+				});
+				hideModal("#signInModal");
+				hideModal("#signUpModal");
+			})
+			.catch((error) => {
+				spinButton({
+					identifier: "#btn-signin-fb",
+					action: "default",
+					text: "Facebook",
+				});
+				console.error("signInWithFacebook->", error);
 			});
-			hideModal("#signInModal");
-		})
-		.catch((error) => {
-			spinButton({
-				identifier: "#btn-signin-fb",
-				action: "default",
-				text: "Signin with facebook",
-			});
-			console.error("signInWithFacebook->", error);
-		});
+	});
 });
 
 // EVENTS onAuthStateChanged USERS
@@ -141,7 +151,7 @@ auth.onAuthStateChanged((user) => {
 	} else {
 		validateTask([]);
 		contentAuthUser.style.display = "none";
-		wrapperMessage.innerHTML = `<h4 class='title-banner-home text-center text-white'>START WITH YOUR LIST OF SIMPLE TASKS</h4>`;
+		wrapperMessage.innerHTML = `<h4 class='title-banner-home text-center text-white'>Administra tus tareas de una manera muy simple 😃</h4>`;
 		globalData["user"] = null;
 		console.error("Auth: signin no found:", user);
 	}

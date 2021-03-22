@@ -1,6 +1,3 @@
-if (globalData) {
-}
-
 //GET tasks
 const validateTask = (tasks) => {
 	if (!globalData.user) return null;
@@ -29,10 +26,12 @@ const setTasks = (tasksList, idWrapper) => {
 
 	let html = "";
 	tasksList.map((task) => {
-		let li = `<div class="col mb-3">
-			<div class="card text-white ${priorityColor(task.priority)} h-100">
+		let li = `<div class="mb-3">
+			<div class="card custom-card-task text-white ${priorityColor(task.priority)} h-100">
 				<div class="card-header d-flex justify-content-between">
-						<div class="col-md-8">${task.priority.toUpperCase()}</div>
+						<div class="col-md-8 d-flex justify-content-start align-items-center">
+						<h6 class="text-card-create-at">${new Date(task.createAt.toDate()).toLocaleString()}</h6>
+						</div>
 						<div class="col-md-4 d-flex justify-content-end">
 							<i class="fas fa-edit m-1 fs-5 item-icon-edit" id="${task.id}"
 							onclick="return updateTask('${task.id}')"
@@ -47,8 +46,8 @@ const setTasks = (tasksList, idWrapper) => {
 						</div>
 				</div>
 				<div class="card-body">
-					<h5 class="card-title">${task.title}</h5>
-					<p class="card-text">${task.description}</p>
+					<h6 class="card-title fw-bold text-uppercase text-wrap lh-sm">${task.title}</h5>
+					<p class="card-text fw-normal text-capitalize text-wrap lh-sm">${task.description}</p>
 				</div>
 			</div>
 		</div>`;

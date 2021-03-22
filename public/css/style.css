@@ -21,7 +21,17 @@ body {
 	font-family: "Poppins", sans-serif !important;
 	position: relative;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+	margin: 0;
+}
 .new-bg-body {
 	background-blend-mode: multiply;
 	background-image: url("../images/banner.jpeg"),
@@ -31,14 +41,24 @@ body {
 	background-position: center center;
 }
 
-.item-icon-edit:hover {
-	color: #b6b6b6;
-	cursor: pointer;
+hr {
+	height: 1px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
-.item-icon-delete:hover {
+.item-icon-edit:hover,
+.item-icon-edit:active {
+	color: #ffffff;
+	cursor: pointer;
+	text-shadow: 1px 1px 9px rgb(70, 70, 70);
+}
+
+.item-icon-delete:hover,
+.item-icon-delete:active {
 	color: rgb(224, 5, 5);
 	cursor: pointer;
+	text-shadow: 1px 1px 9px rgb(70, 70, 70);
 }
 
 .text-white {
@@ -88,6 +108,52 @@ body {
 	text-align: left;
 }
 
+/**STYLE GRID TASKS**/
+
+.container-grid-Tasks {
+	width: 100%;
+	height: 74vh;
+	display: grid;
+	margin: 1rem 0 0 0;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1rem;
+	box-sizing: border-box;
+	background: rgba(0, 0, 0, 0.4) !important;
+	padding: 10px;
+	border-radius: 7px;
+	overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+	.container-grid-Tasks {
+		width: 100%;
+	}
+
+	.container-grid-Tasks .item-grid {
+		width: 270px;
+	}
+}
+
+/**CARD GRUPAL**/
+.tasks-card {
+	background: rgba(0, 0, 0, 0.2) !important;
+	margin: 0;
+}
+
+.tasks-card .card-header h5 {
+	margin: 0;
+}
+
+.tasks-card .custom-card-body {
+	overflow-y: scroll;
+	height: 100px;
+}
+
+/**CARD INDIVIDUAL**/
+.custom-card-task .text-card-create-at {
+	font-size: 0.8rem;
+	margin: 0;
+}
 @media (max-width: 900px) {
 	.title-banner-home {
 		width: 95%;

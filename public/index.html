@@ -4,8 +4,15 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>SIMPLE TASKS</title>
-		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+		<title>Simple tasks</title>
+		<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+		<meta property="og:title" content="Simple tasks" />
+		<meta property="og:type" content="video.movie" />
+		<meta property="og:url" content="https://multiple-login-85df3.web.app/" />
+		<meta
+			property="og:image"
+			content="https://multiple-login-85df3.web.app/images/logo.png"
+		/>
 		<!--CUSTOM STYLES-->
 		<link rel="stylesheet" href="css/style.css" />
 		<!--CDN CSS BOOTSTRAP-->
@@ -23,12 +30,15 @@
 			crossorigin="anonymous"
 		/>
 		<!--CDN FONTS-->
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<!--NAVBAR-->
-		<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-menu pt-4">
+		<nav class="navbar navbar-expand-lg navbar-fixed-top navbar-menu">
 			<div class="container">
 				<a class="navbar-brand d-flex align-items-center" href="#">
 					<img
@@ -41,11 +51,19 @@
 					&nbsp; &nbsp;
 					<h5 class="title-project">Simple Tasks</h5>
 				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
 					<span class="navbar-toggler-icon text-white fs-3">
 						<i class="fa fa-bars"></i>
 					</span>
-				  </button>
+				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item d-flex align-items-center">
@@ -55,7 +73,7 @@
 								data-bs-toggle="modal"
 								data-bs-target="#signInModal"
 								style="display: none"
-								>Sign In</a
+								>Iniciar sesión</a
 							>
 						</li>
 						<li class="nav-item d-flex align-items-center">
@@ -65,33 +83,42 @@
 								data-bs-toggle="modal"
 								data-bs-target="#signUpModal"
 								style="display: none"
-								>Sign Up</a
+								>Registrarse</a
 							>
 						</li>
-						<li class="nav-item d-flex align-items-center item-user-not-exists" style="display: none">
-							<h6 class="nav-user-name item-user-not-exists">user name</h5>
-						</li>
-						<li class="nav-item dropdown item-user-not-exists" style="display: none">
+						<li
+							class="nav-item dropdown d-flex align-items-center item-user-not-exists"
+							style="display: none"
+						>
 							<a
-								class="nav-link dropdown-toggle"
+								class="nav-link dropdown-toggle item-user-not-exists"
 								href="#"
 								id="navbarDropdownMenuLink"
 								role="button"
 								data-bs-toggle="dropdown"
 								aria-expanded="false"
 							>
-								<img
-									src="./images/img-profile.png"
-									alt="Image profile"
-									width="50"
-									height="auto"
-									class="d-inline-block align-top"
-									id="item-img-profile"
-								/>
+								<h6 class="nav-user-name item-user-not-exists">user name</h6>
 							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown" aria-labelledby="navbarDropdownMenuLink">
-								<li id="item-logout"><a class="dropdown-item item-user-not-exists" href="#">Logout</a></li>
+							<ul
+								class="dropdown-menu"
+								aria-labelledby="navbarScrollingDropdown"
+								aria-labelledby="navbarDropdownMenuLink"
+							>
+								<li id="item-logout">
+									<a class="dropdown-item item-user-not-exists" href="#">Cerrar sesión</a>
+								</li>
 							</ul>
+						</li>
+						<li class="nav-item item-user-not-exists" style="display: none">
+							<img
+								src="./images/img-profile.png"
+								alt="Image profile"
+								width="50"
+								height="auto"
+								class="d-inline-block align-top"
+								id="item-img-profile"
+							/>
 						</li>
 					</ul>
 				</div>
@@ -99,40 +126,63 @@
 		</nav>
 
 		<div class="container mt-5 container-message">
-			<h4 class='title-banner-home text-center text-white'>START WITH YOUR LIST OF SIMPLE TASKS</h4>
+			<h4 class="title-banner-home text-center text-white">
+				Administra tus tareas de una manera muy simple 😃
+			</h4>
 		</div>
 
 		<div class="container-fluid" id="content-auth-user" style="display: none">
 			<!-- ADD TASK -->
-			
+
 			<div class="container">
-				<div class="row mt-5">
-					<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-3 mt-3 mb-1">
 						<button
-							class="btn btn-primary btn-lg"
+							class="btn btn-primary btn-md"
 							id="btn-add-task"
 							data-bs-toggle="modal"
 							data-bs-target="#addTaskModal"
 						>
-							ADD TASK
+							<i class="fa fa-plus"></i> AGREGAR TAREA
 						</button>
 					</div>
 				</div>
 			</div>
 			<!--LIST TASK-->
 			<div class="container">
-				<!-- <div class="row row-cols-1 row-cols-md-3 g-3 mt-3" id="tasks"></div> -->
-				<div class="row mt-4">
-					<div class="col-sm-12 col-md-3" id="normal-tasks">
-						
-						<!-- <div class="spinner-border text-primary spinner-content" role="status">
-							<span class="visually-hidden">Loading...</span>
-					  	</div> -->
-
+				<div class="container-grid-Tasks">
+					<div class="item-grid">
+						<div class="card h-100 tasks-card">
+							<div class="card-header bg-primary">
+								<h5 class="card-title text-white">NORMAL</h5>
+							</div>
+							<div class="card-body custom-card-body" id="normal-tasks"></div>
+						</div>
 					</div>
-					<div class="col-sm-12 col-md-3" id="important-tasks"></div>
-					<div class="col-sm-12 col-md-3" id="urgent-tasks"></div>
-					<div class="col-sm-12 col-md-3" id="complete-tasks"></div>
+					<div class="item-grid">
+						<div class="card h-100 tasks-card">
+							<div class="card-header bg-warning">
+								<h5 class="card-title text-white">IMPORTANTE</h5>
+							</div>
+							<div class="card-body custom-card-body" id="important-tasks"></div>
+						</div>
+					</div>
+					<div class="item-grid">
+						<div class="card h-100 tasks-card">
+							<div class="card-header bg-danger">
+								<h5 class="card-title text-white">URGENTE</h5>
+							</div>
+							<div class="card-body custom-card-body" id="urgent-tasks"></div>
+						</div>
+					</div>
+					<div class="item-grid">
+						<div class="card h-100 tasks-card">
+							<div class="card-header bg-success">
+								<h5 class="card-title text-white">COMPLETADO</h5>
+							</div>
+							<div class="card-body custom-card-body" id="complete-tasks"></div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -148,7 +198,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="addTaskModalLabel">ADD TASK</h5>
+						<h5 class="modal-title" id="addTaskModalLabel">AGREGAR TAREA</h5>
 						<button
 							type="button"
 							class="btn-close"
@@ -170,7 +220,7 @@
 									type="text"
 									id="task-title"
 									class="form-control"
-									placeholder="Title"
+									placeholder="Título"
 									required
 								/>
 							</div>
@@ -179,12 +229,12 @@
 									type="text"
 									id="task-description"
 									class="form-control"
-									placeholder="Description"
+									placeholder="Descripción"
 									required
 								></textarea>
 							</div>
 							<div class="d-grid gap-2 mb-3">
-								<button type="submit" class="btn btn-primary btn-save-task">Save</button>
+								<button type="submit" class="btn btn-primary btn-save-task">Guardar</button>
 							</div>
 						</form>
 					</div>
@@ -203,7 +253,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="updateTaskModalLabel">UPDATE TASK</h5>
+						<h5 class="modal-title" id="updateTaskModalLabel">MODIFICAR TAREA</h5>
 						<button
 							type="button"
 							class="btn-close"
@@ -226,7 +276,7 @@
 									type="text"
 									id="update-task-title"
 									class="form-control"
-									placeholder="Title"
+									placeholder="Título"
 									required
 								/>
 							</div>
@@ -235,12 +285,12 @@
 									type="text"
 									id="update-task-description"
 									class="form-control"
-									placeholder="Description"
+									placeholder="Descripción"
 									required
 								></textarea>
 							</div>
 							<div class="d-grid gap-2 mb-3">
-								<button type="submit" class="btn btn-primary btn-update-task">Update</button>
+								<button type="submit" class="btn btn-primary btn-update-task">GUARDAR</button>
 							</div>
 						</form>
 					</div>
@@ -259,7 +309,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Delete task</h5>
+						<h5 class="modal-title">ELIMINAR TAREA</h5>
 						<button
 							type="button"
 							class="btn-close"
@@ -268,13 +318,13 @@
 						></button>
 					</div>
 					<div class="modal-body">
-						<p>Sure you want to delete?</p>
+						<p>Seguro que quieres eliminar?</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-							Cancel
+							Cancelar
 						</button>
-						<button type="button" class="btn btn-danger" id="btnDeleteTask">Yes</button>
+						<button type="button" class="btn btn-danger" id="btnDeleteTask">Si</button>
 					</div>
 				</div>
 			</div>
@@ -291,7 +341,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="signUpModalLabel">SIGN UP</h5>
+						<h5 class="modal-title" id="signUpModalLabel">REGISTRO</h5>
 						<button
 							type="button"
 							class="btn-close"
@@ -315,12 +365,25 @@
 									type="text"
 									id="signup-password"
 									class="form-control"
-									placeholder="Password"
+									placeholder="Contraseña"
 									required
 								/>
 							</div>
 							<div class="d-grid gap-2">
-								<button type="submit" class="btn btn-primary" id="btn-signup">Signup</button>
+								<button type="submit" class="btn btn-primary" id="btn-signup">Registrarse</button>
+								<div class="d-flex justify-content-space_between align-items-center">
+									<hr />
+									&nbsp;
+									<h5>Ó</h5>
+									&nbsp;
+									<hr />
+								</div>
+								<button id="btn-signin-google" class="btn btn-info">
+									<i class="fas fa-google"></i> Google
+								</button>
+								<button id="btn-signin-fb" class="btn btn-primary">
+									<i class="fas fa-facebook"></i> Facebook
+								</button>
 							</div>
 						</form>
 					</div>
@@ -339,7 +402,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="signInModalLabel">SIGN IN</h5>
+						<h5 class="modal-title" id="signInModalLabel">Iniciar sesión</h5>
 						<button
 							type="button"
 							class="btn-close"
@@ -363,15 +426,27 @@
 									type="text"
 									id="signin-password"
 									class="form-control"
-									placeholder="Password"
+									placeholder="Contraseña"
 									required
 								/>
 							</div>
-
 							<div class="d-grid gap-2">
-								<button type="submit" id="btn-signin-emailpass" class="btn btn-secondary">Signin</button>
-								<button id="btn-signin-google" class="btn btn-info">Signin with google</button>
-								<button id="btn-signin-fb" class="btn btn-primary">Signin with facebook</button>
+								<button type="submit" id="btn-signin-emailpass" class="btn btn-secondary">
+									Iniciar sesión
+								</button>
+								<div class="d-flex justify-content-space_between align-items-center">
+									<hr />
+									&nbsp;
+									<h5>Ó</h5>
+									&nbsp;
+									<hr />
+								</div>
+								<button id="btn-signin-google" class="btn btn-info">
+									<i class="fas fa-google"></i> Google
+								</button>
+								<button id="btn-signin-fb" class="btn btn-primary">
+									<i class="fas fa-facebook"></i> Facebook
+								</button>
 							</div>
 						</form>
 					</div>
@@ -380,19 +455,34 @@
 		</div>
 
 		<!--SPINNER-->
-		<div class="spinner-border spinner-fixed text-primary" role="status" style="display:none">
-			<span class="visually-hidden">Loading...</span>
-		  </div>
+		<div
+			class="spinner-border spinner-fixed text-primary"
+			role="status"
+			style="display: none"
+		>
+			<span class="visually-hidden">Cargando...</span>
+		</div>
 
 		<!--ITEM NOTIFICATION-->
-		<div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true" id="toast">
+		<div
+			class="toast align-items-center text-white bg-primary border-0"
+			role="alert"
+			aria-live="assertive"
+			aria-atomic="true"
+			id="toast"
+		>
 			<div class="d-flex">
-			  <div class="toast-body message-notification">
-				Hello, world! This is a toast message.
-			  </div>
-			  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+				<div class="toast-body message-notification">
+					Hello, world! This is a toast message.
+				</div>
+				<button
+					type="button"
+					class="btn-close btn-close-white me-2 m-auto"
+					data-bs-dismiss="toast"
+					aria-label="Close"
+				></button>
 			</div>
-		  </div>
+		</div>
 
 		<!--CDN SCRIPT BOOTSTRAP-->
 		<script

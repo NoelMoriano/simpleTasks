@@ -31,6 +31,6 @@ addTaskForm.addEventListener("submit", async (e) => {
 	} catch (e) {
 		console.error("Save task:", e);
 	} finally {
-		spinButton({identifier: ".btn-save-task", action: "default", text: "Save"});
+		spinButton({identifier: ".btn-save-task", action: "default", text: "Gurdar"});
 	}
 });
