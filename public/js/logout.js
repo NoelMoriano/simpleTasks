@@ -8,7 +8,8 @@ btnLogout.addEventListener("click", (e) => {
 		.then(() => {
 			console.log("signOut success");
 			contentAuthUser.style.display = "none";
-			wrapperMessage.innerHTML = `<h4 class='title-banner-home text-center text-white'>START WITH YOUR LIST OF SIMPLE TASKS</h4>`;
+			wrapperMessageTasksEmpty.style.display = "none";
+			wrapperMessage.innerHTML = `<h4 class='title-banner-home text-center text-white'>Administra tus tareas de una manera muy simple ✏️🗒️</h4>`;
 			validateTask([]);
 			window.location.reload();
 		})

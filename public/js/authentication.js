@@ -151,7 +151,7 @@ auth.onAuthStateChanged((user) => {
 	} else {
 		validateTask([]);
 		contentAuthUser.style.display = "none";
-		wrapperMessage.innerHTML = `<h4 class='title-banner-home text-center text-white'>Administra tus tareas de una manera muy simple 😃</h4>`;
+		wrapperMessage.innerHTML = `<h4 class='title-banner-home text-center text-white'>Administra tus tareas de una manera muy simple ✏️🗒️ </h4>`;
 		globalData["user"] = null;
 		console.error("Auth: signin no found:", user);
 	}

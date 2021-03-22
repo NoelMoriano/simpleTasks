@@ -4,6 +4,7 @@ const validateTask = (tasks) => {
 
 	if (tasks.length) {
 		wrapperMessage.style.display = "none";
+		wrapperMessageTasksEmpty.style.display = "none";
 
 		const normalTask_ = tasks.filter((task) => task.priority === "normal");
 		setTasks(normalTask_, "#normal-tasks");
@@ -17,7 +18,9 @@ const validateTask = (tasks) => {
 		const completeTasks_ = tasks.filter((task) => task.priority === "complete");
 		setTasks(completeTasks_, "#complete-tasks");
 	} else {
-		return null;
+		wrapperMessageTasksEmpty.style.display = "flex";
+		wrapperMessageTasksEmpty.innerHTML = `<h4 class="text-center text-white">
+		Aun no tienes tareas registradas 🙄 <br/> comienza agregando algunos 😉 </h4>`;
 	}
 };
 
@@ -30,7 +33,9 @@ const setTasks = (tasksList, idWrapper) => {
 			<div class="card custom-card-task text-white ${priorityColor(task.priority)} h-100">
 				<div class="card-header d-flex justify-content-between">
 						<div class="col-md-8 d-flex justify-content-start align-items-center">
-						<h6 class="text-card-create-at">${new Date(task.createAt.toDate()).toLocaleString()}</h6>
+						<h6 class="text-card-create-at fw-bold">${new Date(
+							task.createAt.toDate()
+						).toLocaleString()}</h6>
 						</div>
 						<div class="col-md-4 d-flex justify-content-end">
 							<i class="fas fa-edit m-1 fs-5 item-icon-edit" id="${task.id}"

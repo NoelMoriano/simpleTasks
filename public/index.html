@@ -86,39 +86,37 @@
 								>Registrarse</a
 							>
 						</li>
-						<li
-							class="nav-item dropdown d-flex align-items-center item-user-not-exists"
-							style="display: none"
-						>
+
+						<li class="nav-item dropdown item-user-not-exists" style="display: none">
 							<a
-								class="nav-link dropdown-toggle item-user-not-exists"
+								class="nav-link dropdown-toggle"
 								href="#"
-								id="navbarDropdownMenuLink"
+								id="navbarDarkDropdownMenuLink"
 								role="button"
 								data-bs-toggle="dropdown"
 								aria-expanded="false"
 							>
-								<h6 class="nav-user-name item-user-not-exists">user name</h6>
+								<div class="d-flex align-items-center justify-content-between">
+									<h6 class="nav-user-name item-user-not-exists">user name</h6>
+									&nbsp; &nbsp;
+									<img
+										src="./images/img-profile.png"
+										alt="Image profile"
+										width="50"
+										height="auto"
+										class="d-inline-block align-top"
+										id="item-img-profile"
+									/>
+								</div>
 							</a>
 							<ul
-								class="dropdown-menu"
-								aria-labelledby="navbarScrollingDropdown"
-								aria-labelledby="navbarDropdownMenuLink"
+								class="dropdown-menu dropdown-menu-dark"
+								aria-labelledby="navbarDarkDropdownMenuLink"
 							>
-								<li id="item-logout">
-									<a class="dropdown-item item-user-not-exists" href="#">Cerrar sesión</a>
-								</li>
+								<a class="dropdown-item item-user-not-exists" id="item-logout" href="#"
+									>Cerrar sesión</a
+								>
 							</ul>
-						</li>
-						<li class="nav-item item-user-not-exists" style="display: none">
-							<img
-								src="./images/img-profile.png"
-								alt="Image profile"
-								width="50"
-								height="auto"
-								class="d-inline-block align-top"
-								id="item-img-profile"
-							/>
 						</li>
 					</ul>
 				</div>
@@ -127,7 +125,7 @@
 
 		<div class="container mt-5 container-message">
 			<h4 class="title-banner-home text-center text-white">
-				Administra tus tareas de una manera muy simple 😃
+				Administra tus tareas de una manera muy simple ✏️🗒️
 			</h4>
 		</div>
 
@@ -151,6 +149,7 @@
 			<!--LIST TASK-->
 			<div class="container">
 				<div class="container-grid-Tasks">
+					<div class="container container-message-tasks-empty"></div>
 					<div class="item-grid">
 						<div class="card h-100 tasks-card">
 							<div class="card-header bg-primary">
@@ -370,7 +369,7 @@
 								/>
 							</div>
 							<div class="d-grid gap-2">
-								<button type="submit" class="btn btn-primary" id="btn-signup">Registrarse</button>
+								<button type="submit" class="btn btn-dark" id="btn-signup">Registrarse</button>
 								<div class="d-flex justify-content-space_between align-items-center">
 									<hr />
 									&nbsp;
@@ -378,11 +377,11 @@
 									&nbsp;
 									<hr />
 								</div>
-								<button id="btn-signin-google" class="btn btn-info">
-									<i class="fas fa-google"></i> Google
+								<button id="btn-signin-google" class="btn btn-light btn-outline-dark">
+									<i class="fab fa-google"></i> &nbsp; Google
 								</button>
-								<button id="btn-signin-fb" class="btn btn-primary">
-									<i class="fas fa-facebook"></i> Facebook
+								<button id="btn-signin-fb" class="btn btn-primary btn-outline-primary text-white">
+									<i class="fab fa-facebook"></i> &nbsp; Facebook
 								</button>
 							</div>
 						</form>
@@ -431,7 +430,7 @@
 								/>
 							</div>
 							<div class="d-grid gap-2">
-								<button type="submit" id="btn-signin-emailpass" class="btn btn-secondary">
+								<button type="submit" id="btn-signin-emailpass" class="btn btn-dark">
 									Iniciar sesión
 								</button>
 								<div class="d-flex justify-content-space_between align-items-center">
@@ -441,11 +440,11 @@
 									&nbsp;
 									<hr />
 								</div>
-								<button id="btn-signin-google" class="btn btn-info">
-									<i class="fas fa-google"></i> Google
+								<button id="btn-signin-google" class="btn btn-light btn-outline-dark">
+									<i class="fab fa-google"></i> &nbsp; Google
 								</button>
-								<button id="btn-signin-fb" class="btn btn-primary">
-									<i class="fas fa-facebook"></i> Facebook
+								<button id="btn-signin-fb" class="btn btn-primary btn-outline-primary text-white">
+									<i class="fab fa-facebook"></i> &nbsp; Facebook
 								</button>
 							</div>
 						</form>
