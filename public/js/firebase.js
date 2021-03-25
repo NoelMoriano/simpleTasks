@@ -6,7 +6,7 @@ const hosts = ["simpletasks-prod.web.app", "simpletasks-prod.firebaseapp.com"];
 
 const hostName = window.location.hostname;
 
-const ambient = true ? "prod" : "dev";
+const ambient = hosts.includes(hostName) ? "prod" : "dev";
 
 console.info(ambient);
 
