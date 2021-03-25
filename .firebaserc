@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "multiple-login-85df3"
+    "default": "multiple-login-85df3",
+    "simpleTasks-prod": "simpletasks-prod",
+    "simpleTasks-dev": "multiple-login-85df3",
+    "simpletasks-prod": "simpletasks-prod"
   }
 }

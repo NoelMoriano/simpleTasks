@@ -49,6 +49,6 @@ updateTaskForm.addEventListener("submit", async (e) => {
 	} catch (e) {
 		console.error("Task update: ", e);
 	} finally {
-		spinButton({identifier: ".btn-update-task", action: "default", text: "Update"});
+		spinButton({identifier: ".btn-update-task", action: "default", text: "Guardar"});
 	}
 });

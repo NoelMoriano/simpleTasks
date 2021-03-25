@@ -2,11 +2,11 @@
 
 const firebaseConfig = config;
 
-const hosts = ["simpletasks.com", "simpletasks.net", "simpletasks.io"];
+const hosts = ["simpletasks-prod.web.app", "simpletasks-prod.firebaseapp.com"];
 
 const hostName = window.location.hostname;
 
-const ambient = hosts.includes(hostName) ? "prod" : "dev";
+const ambient = true ? "prod" : "dev";
 
 console.info(ambient);
 
@@ -17,3 +17,5 @@ firebase.initializeApp(config_);
 const auth = firebase.auth();
 
 const fs = firebase.firestore();
+
+firebase.analytics();

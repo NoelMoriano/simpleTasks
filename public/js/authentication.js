@@ -19,10 +19,9 @@ signUpForm.addEventListener("submit", (e) => {
 			console.log("signup:", user);
 		})
 		.catch((e) => {
-			const errorCode = e.code;
 			const errorMessage = e.message;
 			spinButton({identifier: "#btn-signup", action: "default", text: "Sign Up"});
-			console.error("signup->", errorCode + ":" + errorMessage);
+			alert(errorMessage);
 		});
 });
 
@@ -44,7 +43,8 @@ signInForm.addEventListener("submit", async (e) => {
 		hideModal("#signInModal");
 		console.log("signin Email&Pass:", user);
 	} catch (e) {
-		console.log("signin Email&Pass:", user);
+		const errorMessage = e.message;
+		alert(errorMessage);
 	} finally {
 		spinButton({
 			identifier: "#btn-signin-emailpass",
@@ -72,13 +72,14 @@ signInWithGoogle.forEach((button) => {
 				hideModal("#signInModal");
 				hideModal("#signUpModal");
 			})
-			.catch((error) => {
+			.catch((e) => {
+				const errorMessage = e.message;
 				spinButton({
 					identifier: "#btn-signin-google",
 					action: "default",
 					text: "Google",
 				});
-				console.error("signInWithGoogle->", error);
+				alert(errorMessage);
 			});
 	});
 });
@@ -102,13 +103,14 @@ signInWithFacebook.forEach((button) => {
 				hideModal("#signInModal");
 				hideModal("#signUpModal");
 			})
-			.catch((error) => {
+			.catch((e) => {
+				const errorMessage = e.message;
 				spinButton({
 					identifier: "#btn-signin-fb",
 					action: "default",
 					text: "Facebook",
 				});
-				console.error("signInWithFacebook->", error);
+				alert(errorMessage);
 			});
 	});
 });

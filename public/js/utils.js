@@ -18,17 +18,16 @@ const querySnapshotToArray = (data) => {
 	return newData;
 };
 
-const spinButton = ({identifier, action, text = "loading..."}) => {
+const spinButton = ({identifier, action, text = "Cargando..."}) => {
 	const itemElement = document.querySelector(identifier);
-	console.log("identifier->", identifier);
 	itemElement.innerHTML = `${action !== "default" ? spinType[action] : text} `;
 };
 
 const spinType = {
-	save: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...`,
-	update: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Saving...`,
-	delete: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Deleting...`,
-	singin: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Login...`,
+	save: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardar...`,
+	update: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Guardar...`,
+	delete: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Eliminar...`,
+	singin: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Iniciar sesión...`,
 };
 
 /* const notification = ({type = "primary", message}) => {
