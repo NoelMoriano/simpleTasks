@@ -1,9 +1,6 @@
 const signUpForm = document.querySelector("#signup-form");
 const signInForm = document.querySelector("#signin-form");
 
-const signInWithGoogle = document.querySelectorAll("#btn-signin-google");
-const signInWithFacebook = document.querySelectorAll("#btn-signin-fb");
-
 // SIGNUP EMAIL AND PASSWORD
 signUpForm.addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -55,65 +52,65 @@ signInForm.addEventListener("submit", async (e) => {
 });
 
 // SIGN IN WITH GOOGLE
-signInWithGoogle.forEach((button) => {
-	button.addEventListener("click", (e) => {
-		e.preventDefault();
-		spinButton({identifier: "#btn-signin-google", action: "singin"});
-		const provider = new firebase.auth.GoogleAuthProvider();
-		auth
-			.signInWithPopup(provider)
-			.then((user) => {
-				console.log("SignInWithGoogle success: ", user);
-				spinButton({
-					identifier: "#btn-signin-google",
-					action: "default",
-					text: "Signin with google",
-				});
-				hideModal("#signInModal");
-				hideModal("#signUpModal");
-			})
-			.catch((e) => {
-				const errorMessage = e.message;
-				spinButton({
-					identifier: "#btn-signin-google",
-					action: "default",
-					text: "Google",
-				});
-				alert(errorMessage);
+
+const signInWithGoogle = (actionType) => {
+	const modalType = actionType === "signUp" ? "#signUpModal" : "#signInModal";
+
+	spinButton({identifier: "#btn-signin-google", action: "singin"});
+	const provider = new firebase.auth.GoogleAuthProvider();
+	auth
+		.signInWithPopup(provider)
+		.then((user) => {
+			console.log("SignInWithGoogle success: ", user);
+			spinButton({
+				identifier: "#btn-signin-google",
+				action: "default",
+				text: "Signin with google",
 			});
-	});
-});
+
+			hideModal(modalType);
+		})
+		.catch((e) => {
+			const errorMessage = e.message;
+			spinButton({
+				identifier: "#btn-signin-google",
+				action: "default",
+				text: "Google",
+			});
+			alert(errorMessage);
+		});
+};
 
 //  SIGNIN WITH FACEBOOK
-signInWithFacebook.forEach((button) => {
-	button.addEventListener("click", (e) => {
-		e.preventDefault();
-		spinButton({identifier: "#btn-signin-fb", action: "singin"});
-		const provider = new firebase.auth.FacebookAuthProvider();
 
-		auth
-			.signInWithPopup(provider)
-			.then((user) => {
-				console.log("signInWithFacebook: ", user);
-				spinButton({
-					identifier: "#btn-signin-fb",
-					action: "default",
-					text: "Signin with facebook",
-				});
-				hideModal("#signInModal");
-				hideModal("#signUpModal");
-			})
-			.catch((e) => {
-				const errorMessage = e.message;
-				spinButton({
-					identifier: "#btn-signin-fb",
-					action: "default",
-					text: "Facebook",
-				});
-				alert(errorMessage);
+const signInWithFacebook = (actionType) => {
+	const typeModal = actionType === "signUp" ? "#signUpModal" : "#signInModal";
+
+	spinButton({identifier: "#btn-signin-fb", action: "singin"});
+	const provider = new firebase.auth.FacebookAuthProvider();
+
+	auth
+		.signInWithPopup(provider)
+		.then((user) => {
+			console.log("signInWithFacebook: ", user);
+			spinButton({
+				identifier: "#btn-signin-fb",
+				action: "default",
+				text: "Signin with facebook",
 			});
-	});
-});
+
+			hideModal(typeModal);
+		})
+		.catch((e) => {
+			const errorMessage = e.message;
+			spinButton({
+				identifier: "#btn-signin-fb",
+				action: "default",
+				text: "Facebook",
+			});
+			alert(errorMessage);
+		});
+};
 
 // EVENTS onAuthStateChanged USERS
 
