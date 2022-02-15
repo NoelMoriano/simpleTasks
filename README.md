@@ -1,6 +1,6 @@
 # SIMPLE TAKS
 
-Registro simple de tu lista de tareas, con multiple autenticación (Email, Google y Facebook).
+Simple register task list, with multiple autenticación (Email, Google y Facebook).
 
 ### Technologies 📋
 
@@ -33,4 +33,4 @@ Registro simple de tu lista de tareas, con multiple autenticación (Email, Googl
 
 ---
 
-Developed with ❤️ by N 😊
+Developed with ❤️ by ENE-DEV 😊
